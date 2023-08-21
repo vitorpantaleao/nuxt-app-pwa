@@ -1,10 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 PWA With Vite-pwa/nuxt
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[vite-pwa/nuxt doc](https://nuxt.comhttps://github.com/vite-pwa/nuxt)
 
 ## Setup
 
-Make sure to install the dependencies:
+Instale as dependências:
 
 ```bash
 # npm
@@ -17,9 +17,9 @@ pnpm install
 yarn install
 ```
 
-## Development Server
+## Servidor de desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Visualize em: `http://localhost:3000`:
 
 ```bash
 # npm
@@ -32,9 +32,9 @@ pnpm run dev
 yarn dev
 ```
 
-## Production
+## Produção
 
-Build the application for production:
+Para gerar uma versão de produção:
 
 ```bash
 # npm
@@ -47,7 +47,7 @@ pnpm run build
 yarn build
 ```
 
-Locally preview production build:
+Visualize a versão de produção:
 
 ```bash
 # npm
@@ -60,4 +60,4 @@ pnpm run preview
 yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Documentação para deploy [deploy doc](https://nuxt.com/docs/getting-started/deployment).
