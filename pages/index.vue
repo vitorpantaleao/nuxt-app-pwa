@@ -2,14 +2,25 @@
 const route = useRoute()
 const colorMode = useColorMode()
 
-console.log(colorMode.preference)
+useHead({
+  title: 'Home',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'My custom description'
+    }
+  ]
+})
+
 </script>
 
 <template>
-  <div>
+  <div class="bg-slate-600 dark:bg-black">
     <h1>Hello World!</h1>
+    <NuxtLink to="/about" class="bg-red-700">About</NuxtLink>
 
-    <div>
+    <div class="bg-">
       <h2>Color mode: {{ $colorMode.value }}</h2>
       <select v-model="$colorMode.preference">
         <option value="system">System</option>
@@ -21,6 +32,5 @@ console.log(colorMode.preference)
 
     <p>Rota atual: {{ route.path }}</p>
 
-    <NuxtLink to="/about">About</NuxtLink>
   </div>
 </template>
