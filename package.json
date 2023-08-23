@@ -10,8 +10,20 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@types/node": "^18.17.3",
     "@vite-pwa/nuxt": "^0.1.0",
     "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/html-validator": "^1.5.2",
+    "@nuxtjs/robots": "^3.0.0",
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

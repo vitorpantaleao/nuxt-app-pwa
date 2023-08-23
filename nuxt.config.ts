@@ -1,9 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  // buildModules: ["@nuxtjs/pwa"],
   modules: [
+    "@pinia/nuxt",
     '@vite-pwa/nuxt',
+    '@nuxtjs/color-mode',
   ],
+  pinia: {
+    autoImports: [
+      "defineStore", 
+      "acceptHMRUpdate",
+      ['defineStore', 'definePiniaStore'],
+    ],
+  },
+  imports: { dirs: ["stores"] },
+  ssr: true,
   pwa: {
     manifest: {
       name: 'Nuxt 3 PWA',
