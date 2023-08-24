@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   // buildModules: ["@nuxtjs/pwa"],
+  nitro: {
+    preset: 'vercel-edge',
+  },
   app: {
     head: {
       meta: [
