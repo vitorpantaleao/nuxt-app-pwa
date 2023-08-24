@@ -2,7 +2,7 @@
     <div class="w-screen h-10 bg-slate-300">
         <div class="flex items-center justify-center relative">
             <PhList :size="32" class="absolute left-2 cursor-pointer" @click="toggleMenu" />
-            <!-- <NuxtImg src="/logo.png" class="h-10" /> -->
+            <NuxtImg src="/logo.png" class="h-10" />
         </div>
         <NavigationSideMenu :toggleMenu="isMenuOpen" @closeMenu="closeMenu" />
     </div>
