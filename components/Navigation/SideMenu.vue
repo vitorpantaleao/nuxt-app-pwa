@@ -1,6 +1,8 @@
 <template>
     <aside :class="['fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0', {'translate-x-0': toggleMenu}]">
-        <button @click="$emit('closeMenu')" class="absolute right-2 top-2"><ph-x :size="32" color="#fff" /></button>
+        <button @click="$emit('closeMenu')" class="absolute left-[104%] top-1" v-show="toggleMenu">
+            <ph-x :size="32" class="text-black dark:text-white" />
+        </button>
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2 font-medium">
                 <li>

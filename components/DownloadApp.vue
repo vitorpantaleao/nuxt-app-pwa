@@ -11,7 +11,7 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem aspernatur iste nam dignissimos repudiandae sunt sit cumque porro eum ex. Magnam ipsum, ratione nam error minus dolor nesciunt quos fuga!
         </div>
         <div class="flex">
-            <button class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="install">
+            <button class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="enable-banner-install" v-show="showInstallButton" @click="installApp">
                 Download
             </button>
             <button class="text-blue-800 bg-transparent border border-blue-800 hover:bg-blue-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-blue-600 dark:border-blue-600 dark:text-blue-400 dark:hover:text-white dark:focus:ring-blue-800">
@@ -20,3 +20,48 @@
         </div>
     </div>
 </template>
+
+<script>
+import { ref, onMounted } from 'vue';
+
+export default {
+  setup() {
+    const showInstallButton = ref(false);
+    let deferredPrompt = null;
+
+    const installApp = () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the prompt');
+          } else {
+            console.log('User dismissed the prompt');
+          }
+          deferredPrompt = null;
+        });
+      }
+    };
+
+    onMounted(() => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(() => {
+          console.log('Service Worker Registered');
+        });
+      }
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt...');
+        showInstallButton.value = true;
+        e.preventDefault();
+        deferredPrompt = e;
+      });
+    });
+
+    return {
+      showInstallButton,
+      installApp,
+    };
+  },
+};
+</script>
