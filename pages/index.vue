@@ -1,36 +1,25 @@
-<script setup>
-const route = useRoute()
-const colorMode = useColorMode()
-
-useHead({
-  title: 'Home',
-  meta: [
-    {
-      hid: 'description',
-      name: 'description',
-      content: 'My custom description'
-    }
-  ]
-})
-
-</script>
-
 <template>
-  <div class="bg-slate-600 dark:bg-black">
-    <h1>Hello World!</h1>
-    <NuxtLink to="/about" class="bg-red-700">About</NuxtLink>
-
-    <div class="bg-">
-      <h2>Color mode: {{ $colorMode.value }}</h2>
-      <select v-model="$colorMode.preference">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="sepia">Sepia</option>
-      </select>
-    </div>
-
-    <p>Rota atual: {{ route.path }}</p>
-
+  <div class="banner">
+    <NuxtImg src="https://placehold.co/600x400/000000/fff/?text=Banner" class="w-screen" />
   </div>
+  <div class="grid grid-cols-2 gap-4 p-4">
+    <NuxtImg src="https://placehold.co/600x400?text=Aula+01" class="" />
+    <NuxtImg src="https://placehold.co/600x400?text=Aula+02" class="" />
+    <NuxtImg src="https://placehold.co/600x400?text=Aula+03" class="" />
+    <NuxtImg src="https://placehold.co/600x400?text=Aula+04" class="" />
+  </div>
+  <NuxtImg src="https://placehold.co/600x200/77c4ff/fff?text=Banner" class="w-screen" />
 </template>
+
+<script setup>
+  useHead({
+    title: 'Home',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'My custom description'
+      }
+    ]
+  })
+</script>

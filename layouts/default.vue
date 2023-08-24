@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Layout Default</h2>
+        <NavigationMenuBar />
         <slot />
     </div>
 </template>

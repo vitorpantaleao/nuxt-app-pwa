@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
+    '@nuxt/image',
   ],
   colorMode: {
     classSuffix: '',
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
   },
   imports: { dirs: ["stores"] },
   ssr: true,
+  image: {
+    dir: 'assets/img',
+  },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.js',
