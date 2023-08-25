@@ -1,14 +1,26 @@
 <template>
-  <div class="banner">
-    <NuxtImg src="https://placehold.co/600x400/000000/fff/?text=Banner" class="w-screen" />
+  <div>
+    <div>
+      <picture>
+        <source srcset="https://placehold.co/768x400/000000/fff/?text=Mobile" media="(max-width: 768px)" />
+        <NuxtImg src="https://placehold.co/1920x500/000000/fff/?text=Desktop" class="w-screen" />
+      </picture>
+    </div>
+    <div class="w-screen md:w-full mx-auto px-4 md:px-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8">
+        <NuxtImg src="https://placehold.co/600x400?text=Aula+01" class="" />
+        <NuxtImg src="https://placehold.co/600x400?text=Aula+02" class="" />
+        <NuxtImg src="https://placehold.co/600x400?text=Aula+03" class="" />
+        <NuxtImg src="https://placehold.co/600x400?text=Aula+04" class="" />
+      </div>
+      <div>
+        <picture>
+          <source srcset="https://placehold.co/768x250/77c4ff/fff/?text=Mobile" media="(max-width: 768px)" />
+          <NuxtImg src="https://placehold.co/1024x200/77c4ff/fff?text=Desktop" class="w-screen" />
+        </picture>
+      </div>
+    </div>
   </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-    <NuxtImg src="https://placehold.co/600x400?text=Aula+01" class="" />
-    <NuxtImg src="https://placehold.co/600x400?text=Aula+02" class="" />
-    <NuxtImg src="https://placehold.co/600x400?text=Aula+03" class="" />
-    <NuxtImg src="https://placehold.co/600x400?text=Aula+04" class="" />
-  </div>
-  <NuxtImg src="https://placehold.co/600x200/77c4ff/fff?text=Banner" class="w-screen" />
 </template>
 
 <script setup>

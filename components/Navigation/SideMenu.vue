@@ -1,9 +1,9 @@
 <template>
-    <aside :class="['fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0', {'translate-x-0': toggleMenu}]">
+    <aside :class="['fixed md:relative top-0 left-0 z-40 w-64 min-h-screen transition-transform -translate-x-full sm:translate-x-0', {'translate-x-0': toggleMenu}]">
         <button @click="$emit('closeMenu')" class="absolute left-[104%] top-1" v-show="toggleMenu">
             <ph-x :size="32" class="text-black dark:text-white" />
         </button>
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-slate-800">
             <ul class="space-y-2 font-medium">
                 <li>
                     <NuxtLink to="/" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" @click="$emit('closeMenu')">

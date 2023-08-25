@@ -1,11 +1,12 @@
 <template>
-    <div class="w-screen h-10 bg-slate-300">
+    <header class="w-full bg-slate-900">
         <div class="flex items-center justify-center relative">
-            <PhList :size="32" class="absolute left-2 cursor-pointer" @click="toggleMenu" />
-            <NuxtImg src="/logo.png" class="h-10" />
+            <PhList :size="32" class="absolute left-4 cursor-pointer text-white" @click="toggleMenu" />
+            <NuxtLink to="/">
+                <NuxtImg src="/logo.png" class="h-12 filter invert grayscale-[1] contrast-[2.5] brightness-[1.5]" />
+            </NuxtLink>
         </div>
-        <NavigationSideMenu :toggleMenu="isMenuOpen" @closeMenu="closeMenu" />
-    </div>
+    </header>
 </template>
 
 <script setup>
