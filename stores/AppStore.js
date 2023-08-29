@@ -5,12 +5,15 @@ export const useAppStore = defineStore("AppStore", {
         return {
             tokenCart: null,
             carrinho: [],
+            menuOpen: false,
         }
     },
-    getters: {
-        //
-    },
     actions: {
-        //
+        toggleMenu() {
+            this.menuOpen = !this.menuOpen
+        },
     },
+    // getters: {
+        // isMenuOpen: (state) => state.menuOpen,
+    // },
 })

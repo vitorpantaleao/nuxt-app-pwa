@@ -2,7 +2,7 @@
     <div>
         <NavigationMenuBar />
         <div class="grid grid-cols-[max-content,1fr]">
-            <NavigationSideMenu :toggleMenu="isMenuOpen" @closeMenu="closeMenu" />
+            <NavigationSideMenu />
             <div>
                 <slot />
             </div>
@@ -12,15 +12,18 @@
 </template>
 
 <script setup>
-import { PhList } from "@phosphor-icons/vue"
+// verify if route changed and close menu
+import { useAppStore } from "@/stores/AppStore"
 
-const isMenuOpen = ref(false)
+const AppStore = useAppStore()
+const route = useRoute()
 
-const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value
-}
-
-const closeMenu = () => {
-    isMenuOpen.value = false
-}
+watch(
+    () => route.path,
+    () => {
+        if (AppStore.menuOpen) {
+            AppStore.toggleMenu()
+        }
+    }
+)
 </script>

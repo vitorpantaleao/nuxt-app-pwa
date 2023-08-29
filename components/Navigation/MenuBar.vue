@@ -1,7 +1,7 @@
 <template>
     <header class="w-full bg-slate-900">
         <div class="flex items-center justify-center relative">
-            <PhList :size="32" class="absolute left-4 cursor-pointer text-white" @click="toggleMenu" />
+            <PhList :size="32" class="absolute left-4 cursor-pointer text-white" @click="toggleMenu" :menuOpen="menuOpen" />
             <NuxtLink to="/">
                 <NuxtImg src="/logo.png" class="h-12 filter invert grayscale-[1] contrast-[2.5] brightness-[1.5]" />
             </NuxtLink>
@@ -11,14 +11,12 @@
 
 <script setup>
 import { PhList } from "@phosphor-icons/vue"
+import { useAppStore } from "@/stores/AppStore"
 
-const isMenuOpen = ref(false)
+const AppStore = useAppStore()
+const menuOpen = computed(() => AppStore.menuOpen)
 
-const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value
-}
-
-const closeMenu = () => {
-    isMenuOpen.value = false
+function toggleMenu() {
+    AppStore.toggleMenu()
 }
 </script>
