@@ -39,8 +39,7 @@ export default defineNuxtConfig({
   imports: { dirs: ["stores"] },
   ssr: true,
   image: {
-    dir: 'assets/img',
-    // provider: 'ipx',
+    // dir: 'assets/img',
   },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
