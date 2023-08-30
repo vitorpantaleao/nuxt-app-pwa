@@ -1,10 +1,10 @@
 <template>
     <div>
-        <NavigationMenuBar />
         <div class="grid grid-cols-[max-content,1fr]">
             <NavigationSideMenu />
-            <DownloadApp />
             <div class="max-w-full">
+                <NavigationMenuBar />
+                <DownloadApp />
                 <slot />
                 <NavigationFooter />
             </div>
