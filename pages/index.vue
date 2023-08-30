@@ -7,13 +7,8 @@
       </picture>
     </div>
     <div class="w-screen md:w-full mx-auto px-4 md:px-12">
-      <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8"> -->
-        <!-- <NuxtImg src="https://placehold.co/600x400?text=Aula+01" class="" />
-        <NuxtImg src="https://placehold.co/600x400?text=Aula+02" class="" />
-        <NuxtImg src="https://placehold.co/600x400?text=Aula+03" class="" />
-        <NuxtImg src="https://placehold.co/600x400?text=Aula+04" class="" /> -->
-        <ModulesListModules />
-      <!-- </div> -->
+      <h2 class="text-4xl py-4 font-sans decoration-slate-500 text-slate-800 font-semibold">Módulos</h2>
+      <ModulosListModules />
       <div>
         <picture>
           <source srcset="https://placehold.co/768x250/77c4ff/fff/?text=Mobile" media="(max-width: 768px)" />

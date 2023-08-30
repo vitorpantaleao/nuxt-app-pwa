@@ -1,10 +1,9 @@
 <template>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8">
-        <!-- {{ route.params.id }} -->
-        <!-- <pre>{{ modulesStore.getModulos[0].thumbnail }}</pre> -->
         <div v-for="modulo in modulesStore.getModulos" :key="modulo.id">
             <NuxtLink :to="`/modulo/${modulo.id}`">
                 <NuxtImg :src="modulo.thumbnail" class="" />
+                <h3 class="text-lg py-3 font-sans decoration-slate-500 text-slate-800 font-semibold">{{ modulo.nome }}</h3>
             </NuxtLink>
         </div>
     </div>

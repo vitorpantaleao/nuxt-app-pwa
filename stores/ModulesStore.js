@@ -12,6 +12,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                     aulas: [
                         {
                             id: 1,
+                            type: "video",
                             nome: "Aula 1",
                             descricao: "Descrição da aula 1",
                             thumbnail: "https://i.ytimg.com/vi/MYe3dKfQiRQ/maxresdefault.jpg",
@@ -29,6 +30,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                     aulas: [
                         {
                             id: 1,
+                            type: "video",
                             nome: "Aula 1",
                             descricao: "Descrição da aula 1",
                             thumbnail: "https://i.ytimg.com/vi/leVycPfVEgQ/maxresdefault.jpg",
@@ -46,6 +48,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                     aulas: [
                         {
                             id: 1,
+                            type: "video",
                             nome: "Aula 1",
                             descricao: "Descrição da aula 1",
                             thumbnail: "https://i.ytimg.com/vi/WdXQabecaEs/maxresdefault.jpg",
@@ -63,6 +66,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                     aulas: [
                         {
                             id: 1,
+                            type: "video",
                             nome: "Aula 1",
                             descricao: "Descrição da aula 1",
                             thumbnail: "https://i.ytimg.com/vi/YxiHmTkg8oc/maxresdefault.jpg",
@@ -83,6 +87,9 @@ export const useModulesStore = defineStore("ModulesStore", {
     getters: {
         getModulos() {
             return this.modulos
+        },
+        getModulo: (state) => (id) => {
+            return state.modulos.find(modulo => modulo.id == id)
         },
     },
 })

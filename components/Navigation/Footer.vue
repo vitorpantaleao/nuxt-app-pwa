@@ -3,11 +3,3 @@
         <h4>2023 - Todos os direitos reservados</h4>
     </footer>
 </template>
-
-<script setup>
-
-</script>
-
-<style lang="scss" scoped>
-
-</style>

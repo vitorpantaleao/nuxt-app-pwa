@@ -3,11 +3,11 @@
         <NavigationMenuBar />
         <div class="grid grid-cols-[max-content,1fr]">
             <NavigationSideMenu />
-            <div>
+            <DownloadApp />
+            <div class="max-w-full">
                 <slot />
                 <NavigationFooter />
             </div>
-            <DownloadApp />
         </div>
     </div>
 </template>
