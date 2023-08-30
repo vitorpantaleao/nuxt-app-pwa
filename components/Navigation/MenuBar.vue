@@ -5,7 +5,7 @@
                 <PhList :size="32" class="absolute left-4 cursor-pointer text-white" @click="toggleMenu" />
             </template>
             <NuxtLink to="/">
-                <NuxtImg src="/logo.png" class="h-12 filter invert grayscale-[1] contrast-[2.5] brightness-[1.5]" />
+                <NuxtImg src="img/logo.png" class="h-12 filter invert grayscale-[1] contrast-[2.5] brightness-[1.5]" />
             </NuxtLink>
         </div>
     </header>
