@@ -3,7 +3,7 @@
     <div>
       <picture>
         <source srcset="https://placehold.co/768x400/000000/fff/?text=Mobile" media="(max-width: 768px)" />
-        <NuxtImg src="https://placehold.co/1920x500/000000/fff/?text=Desktop" class="w-screen" />
+        <NuxtImg src="https://placehold.co/1920x500/000000/fff/?text=Desktop" class="w-screen" loading="lazy" />
       </picture>
     </div>
     <div class="w-screen md:w-full mx-auto px-4 md:px-12">
@@ -12,7 +12,7 @@
       <div>
         <picture>
           <source srcset="https://placehold.co/768x250/77c4ff/fff/?text=Mobile" media="(max-width: 768px)" />
-          <NuxtImg src="https://placehold.co/1024x200/77c4ff/fff?text=Desktop" class="w-screen" />
+          <NuxtImg src="https://placehold.co/1024x200/77c4ff/fff?text=Desktop" class="w-screen" loading="lazy" />
         </picture>
       </div>
     </div>
