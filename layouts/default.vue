@@ -5,6 +5,7 @@
             <NavigationSideMenu />
             <div>
                 <slot />
+                <NavigationFooter />
             </div>
             <DownloadApp />
         </div>
