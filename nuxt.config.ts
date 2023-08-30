@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   ssr: true,
   image: {
     dir: 'assets/img',
-    provider: 'ipx',
+    // provider: 'ipx',
   },
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
