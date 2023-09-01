@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full sticky top-0 bg-slate-900">
+    <header class="w-full bg-slate-900 sticky top-0 z-40">
         <div class="flex items-center justify-center relative">
             <template v-if="!AppStore.menuOpen">
                 <PhList :size="32" class="absolute left-4 cursor-pointer text-white" @click="toggleMenu" />

@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <div class="grid grid-cols-[max-content,1fr]">
-            <NavigationSideMenu />
-            <div class="max-w-full">
-                <NavigationMenuBar />
-                <DownloadApp />
+    <div class="grid grid-cols-[max-content,1fr]">
+        <NavigationSideMenu />
+        <div class="max-w-full">
+            <NavigationMenuBar />
+            <DownloadApp />
+            <div class="min-h-screen">
                 <slot />
-                <NavigationFooter />
             </div>
+            <NavigationFooter />
         </div>
     </div>
 </template>

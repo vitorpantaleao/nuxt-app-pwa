@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  // buildModules: ["@nuxtjs/pwa"],
   nitro: {
     preset: 'vercel-edge',
   },
@@ -25,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    'radix-vue/nuxt'
   ],
   colorMode: {
     classSuffix: '',
