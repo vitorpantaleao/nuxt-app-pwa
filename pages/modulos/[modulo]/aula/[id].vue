@@ -1,7 +1,7 @@
 <template>
-    <div class="w-screen md:w-auto md:flex overflow-hidden">
+    <div class="w-screen md:w-auto md:flex">
         <div class="main flex-1">
-            <div class="sticky sm:static z-10 top-0">
+            <div class="sticky sm:static z-10 top-12">
                 <iframe class="w-full h-[300px] md:h-[700px]" :src="`${aula.video}?si=1`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="p-5">
