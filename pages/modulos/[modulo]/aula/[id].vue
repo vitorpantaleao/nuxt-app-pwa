@@ -22,4 +22,15 @@ const route = useRoute()
 const modulesStore = useModulesStore()
 const modulo = modulesStore.getModulo(route.params.modulo)
 const aula = modulo.aulas.find(aula => aula.id == route.params.id)
+
+useHead({
+    title: aula.nome + ' | ' + modulo.nome,
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: aula.descricao
+        }
+    ]
+})
 </script>
