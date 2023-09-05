@@ -8,6 +8,13 @@
                 <p>Você está na aula {{ route.params.id }} do módulo {{ route.params.modulo }}</p>
                 <h1 class="text-2xl font-semibold">{{ modulo.nome }}</h1>
                 <p class="text-lg font-normal">{{ modulo.descricao }}</p>
+
+                <h2 class="text-2xl font-semibold pt-12">Materiais</h2>
+                <ul class="mt-2">
+                    <li>
+                        Lista de materiais
+                    </li>
+                </ul>
             </div>
         </div>
         <ModulesAsideModules />

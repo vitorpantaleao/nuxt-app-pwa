@@ -19,6 +19,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/MYe3dKfQiRQ",
                             duracao: "00:05:00",
                             concluida: false,
+                            materiais: [],
                         },
                     ],
                 },
@@ -37,6 +38,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/leVycPfVEgQ",
                             duracao: "00:05:00",
                             concluida: false,
+                            materiais: [],
                         },
                         {
                             id: 2,
@@ -47,6 +49,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/fpXlGqhO2Fk",
                             duracao: "00:05:00",
                             concluida: false,
+                            materiais: [],
                         },
                     ],
                 },
@@ -65,6 +68,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/WdXQabecaEs",
                             duracao: "00:05:00",
                             concluida: false,
+                            materiais: [],
                         },
                     ],
                 },
@@ -83,6 +87,7 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/YxiHmTkg8oc",
                             duracao: "00:05:00",
                             concluida: false,
+                            materiais: [],
                         },
                     ],
                 },
@@ -101,16 +106,5 @@ export const useModulesStore = defineStore("ModulesStore", {
         getModulo: (state) => (id) => {
             return state.modulos.find(modulo => modulo.id == id)
         },
-        getAula: (state) => (id) => {
-            let aula = null
-            state.modulos.forEach(modulo => {
-                modulo.aulas.forEach(item => {
-                    if (item.id == id) {
-                        aula = item
-                    }
-                })
-            })
-            return aula
-        }
     },
 })

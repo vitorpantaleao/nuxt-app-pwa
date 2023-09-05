@@ -13,13 +13,6 @@
                     </NuxtLink>
                 </li>
             </ul>
-
-            <h2 class="text-2xl font-semibold pt-12">Materiais</h2>
-            <!-- <ul class="mt-2">
-                <li v-for="material in modulo.materiais" :key="material.id">
-                    <a :href="material.link" target="_blank">{{ material.nome }}</a>
-                </li>
-            </ul> -->
         </div>
     </div>
 </template>

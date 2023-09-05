@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ...mauve,
-        ...green,
-        ...grass,
+        // ...mauve,
+        // ...green,
+        // ...grass,
       },
       keyframes: {
         slideDown: {
