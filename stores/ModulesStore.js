@@ -101,5 +101,16 @@ export const useModulesStore = defineStore("ModulesStore", {
         getModulo: (state) => (id) => {
             return state.modulos.find(modulo => modulo.id == id)
         },
+        getAula: (state) => (id) => {
+            let aula = null
+            state.modulos.forEach(modulo => {
+                modulo.aulas.forEach(item => {
+                    if (item.id == id) {
+                        aula = item
+                    }
+                })
+            })
+            return aula
+        }
     },
 })
