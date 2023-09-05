@@ -7,7 +7,16 @@
 </template>
 
 <script setup>
-
+useHead({
+    title: 'Módulos',
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: 'Lista de módulos'
+        }
+    ]
+})
 </script>
 
 <style lang="scss" scoped>

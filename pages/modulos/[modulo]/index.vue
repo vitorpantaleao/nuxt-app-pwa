@@ -14,7 +14,7 @@
                 </li>
             </ul>
 
-            <h2 class="text-2xl font-semibold">Materiais</h2>
+            <h2 class="text-2xl font-semibold pt-12">Materiais</h2>
             <!-- <ul class="mt-2">
                 <li v-for="material in modulo.materiais" :key="material.id">
                     <a :href="material.link" target="_blank">{{ material.nome }}</a>
