@@ -1,7 +1,6 @@
 <template>
-    <div class="p-5">
+    <div class="w-screen md:w-full mx-auto px-4 md:px-12">
         <h1 class="text-3xl font-semibold">Módulos</h1>
-
         <ModulesListModules />
     </div>
 </template>
