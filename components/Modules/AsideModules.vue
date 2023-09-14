@@ -7,9 +7,9 @@
             <h3>Módulos</h3>
             <Icon icon="material-symbols:close" class="ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180 mr-1 cursor-pointer hidden md:block" aria-hidden @click="showLessons = false" />
         </div>
-        <AccordionRoot :class="['rounded-md', {hidden: !showLessons}]" :default-value="[]" type="multiple" :collapsible="true" >
+        <AccordionRoot :class="['rounded-md', {hidden: !showLessons}]" :default-value="'modulo-' + moduloId" type="single">
             <template v-for="modulo in modulos" :key="modulo.id">
-                <AccordionItem class="accordion-item border-b-[1px] border-slate-900" :value="modulo.id">
+                <AccordionItem class="accordion-item border-b-[1px] border-slate-900" :value="'modulo-' + modulo.id">
                     <AccordionHeader class="flex p-3">
                         <AccordionTrigger class="accordion-trigger group flex items-center justify-between w-full">
                             <span>{{ modulo.nome }}</span>
@@ -18,7 +18,7 @@
                     </AccordionHeader>
                     <template v-for="aula in modulo.aulas" :key="aula.id">
                         <AccordionContent class="accordion-content bg-slate-900 border-b-[0.5px] border-slate-700">
-                            <NuxtLink :to="`/modulos/${modulo.id}/aula/${aula.id}`" class="flex items-center px-5 py-2 hover:bg-slate-700 cursor-pointer">
+                            <NuxtLink :to="`/modulos/${modulo.id}/aula/${aula.id}`" :class="['flex items-center px-5 py-2 hover:bg-slate-700 cursor-pointer', {'bg-slate-700': aulaId == aula.id && moduloId == modulo.id}]">
                                 <AvatarRoot class="inline-flex h-[45px] w-[65px] select-none items-center justify-center overflow-hidden align-middle">
                                     <AvatarImage class="h-full w-full object-cover" :src="aula.thumbnail" :alt="aula.nome" />
                                     <AvatarFallback class="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium" :delay-ms="600"> {{ aula.nome }} </AvatarFallback>
@@ -39,8 +39,13 @@
 import { useModulesStore } from '@/stores/ModulesStore'
 import { AccordionContent, AccordionHeader, AccordionItem, AccordionRoot, AccordionTrigger, AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue'
 import { Icon } from '@iconify/vue'
+import { useRoute } from 'vue-router'
 
 const modulesStore = useModulesStore()
 const modulos = modulesStore.getModulos
 const showLessons = ref(true)
+
+const route = useRoute()
+const moduloId = route.params.modulo
+const aulaId = route.params.id
 </script>
