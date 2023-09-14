@@ -52,28 +52,28 @@ const itemsMenu = [
     {
         name: 'Loja',
         icon: 'ic:round-shopping-cart',
-        route: '#',
+        route: '/loja',
         subMenu: null
     },
     {
         name: 'Minha Conta',
         icon: 'ic:round-account-circle',
-        route: '#',
+        route: '/minha-conta',
         subMenu: [
             {
                 name: 'Perfil',
-                route: '#'
+                route: '/perfil'
             },
             {
                 name: 'Endereço',
-                route: '#'
+                route: '/endereco'
             },
         ]
     },
     {
         name: 'Avisos',
         icon: 'ic:round-notifications',
-        route: '#',
+        route: '/avisos',
         subMenu: null
     }
 ]
@@ -86,3 +86,12 @@ function openSubMenu(dataset) {
     document.getElementById(dataset).classList.toggle('hidden')
 }
 </script>
+
+<style scoped>
+    .router-link-active {
+        @apply bg-gray-700 font-bold;
+    }
+    .router-link-active:hover {
+        @apply bg-gray-700 font-bold;
+    }
+</style>
