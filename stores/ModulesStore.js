@@ -22,10 +22,10 @@ export const useModulesStore = defineStore("ModulesStore", {
                             materiais: [
                                 {
                                     id: 1,
-                                    nome: "PDF Aula 1",
+                                    nome: "PDF Aula",
                                     file: "files/02-conceitos-de-programacao.pdf",
                                     concluido: false,
-                                }
+                                },
                             ],
                         },
                     ],
@@ -45,7 +45,14 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/leVycPfVEgQ",
                             duracao: "00:05:00",
                             concluida: false,
-                            materiais: [],
+                            materiais: [
+                                {
+                                    id: 1,
+                                    nome: "PDF Aula",
+                                    file: "files/04-estrutura-sequencial.pdf",
+                                    concluido: false,
+                                },
+                            ],
                         },
                         {
                             id: 2,
@@ -75,7 +82,14 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/WdXQabecaEs",
                             duracao: "00:05:00",
                             concluida: false,
-                            materiais: [],
+                            materiais: [
+                                {
+                                    id: 1,
+                                    nome: "PDF Aula",
+                                    file: "files/Curso-Java-COMPLETO.pdf",
+                                    concluido: false,
+                                },
+                            ],
                         },
                     ],
                 },
