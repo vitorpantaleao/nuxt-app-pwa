@@ -1,5 +1,5 @@
 <template>
-    <aside :class="['top-0 z-50 max-h-screen h-screen fixed md:sticky px-3 py-4 bg-gray-50 dark:bg-slate-800 transition-all duration-300 ease-out', {'w-64': menuOpen, '-translate-x-full sm:translate-x-0 md:w-fit': !menuOpen}]">
+    <aside :class="['top-0 z-[999999] max-h-screen h-screen fixed md:sticky px-3 py-4 bg-gray-50 dark:bg-slate-800 transition-all duration-300 ease-out', {'w-64': menuOpen, '-translate-x-full sm:translate-x-0 md:w-fit': !menuOpen}]">
         <button @click="toggleMenu" class="absolute left-[104%] top-2 z-10" v-show="menuOpen">
             <Icon icon="ic:sharp-close" width="35" class="text-black dark:text-white" />
         </button>
