@@ -28,7 +28,8 @@
     "@pinia/nuxt": "^0.4.11",
     "js-cookie": "^3.0.5",
     "pinia": "^2.1.6",
-    "radix-vue": "^0.1.29"
+    "radix-vue": "^0.1.29",
+    "vue3-pdf-app": "^1.0.3"
   },
   "overrides": {
     "vue": "latest"

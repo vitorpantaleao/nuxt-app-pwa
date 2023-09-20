@@ -11,8 +11,9 @@
 
                 <h2 class="text-2xl font-semibold pt-12">Materiais</h2>
                 <ul class="mt-2">
-                    <li>
-                        Lista de materiais
+                    <li v-for="material, i in aula.materiais" :key="i">
+                        {{ material.nome }}
+                        <VuePdfApp style="height: 100vh;" :pdf="`/${material.file}`">PDF</VuePdfApp>
                     </li>
                 </ul>
             </div>
@@ -24,6 +25,9 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { useModulesStore } from '@/stores/ModulesStore'
+import VuePdfApp from "vue3-pdf-app";
+// import this to use default icons for buttons
+import "vue3-pdf-app/dist/icons/main.css";
 
 const route = useRoute()
 const modulesStore = useModulesStore()

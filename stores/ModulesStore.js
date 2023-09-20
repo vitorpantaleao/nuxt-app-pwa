@@ -19,7 +19,14 @@ export const useModulesStore = defineStore("ModulesStore", {
                             video: "https://www.youtube.com/embed/MYe3dKfQiRQ",
                             duracao: "00:05:00",
                             concluida: false,
-                            materiais: [],
+                            materiais: [
+                                {
+                                    id: 1,
+                                    nome: "PDF Aula 1",
+                                    file: "files/02-conceitos-de-programacao.pdf",
+                                    concluido: false,
+                                }
+                            ],
                         },
                     ],
                 },
