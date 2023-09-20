@@ -12,21 +12,23 @@
                 <p class="text-lg font-normal text-gray-600">{{ modulo.descricao }}</p>
                 <div class="border border-b-1 my-8"></div>
                 <h2 class="text-2xl font-semibold">Materiais</h2>
-                <p class="text-gray-600" v-if="aula.materiais == ''">Não há material para essa aula</p>
-                <ul class="mt-2 flex space-x-2" v-else>
-                    <li v-for="material, i in aula.materiais" :key="i">
-                        <button class="text-center text-orange-600 font-bold p-2 rounded hover:bg-orange-100" @click="showFile = true">
-                            <Icon icon="ic:round-picture-as-pdf" width="50" class="mx-auto" />
-                            <h3>{{ material.nome }}</h3>
-                        </button>
-                        <div class="h-full bg-black absolute top-0 left-0 right-0 text-white z-10 p-5" v-if="showFile">
-                            <button class="text-white flex items-center font-bold mx-auto pb-3" @click="showFile = false">
-                                <Icon icon="ic:round-close" width="25" /> FECHAR
+                <ClientOnly fallback-tag="span" fallback="Carregando materiais...">
+                    <p class="text-gray-600" v-if="aula.materiais == ''">Não há material para essa aula</p>
+                    <ul class="mt-2 flex space-x-2" v-else>
+                        <li v-for="material, i in aula.materiais" :key="i">
+                            <button class="text-center text-orange-600 font-bold p-2 rounded hover:bg-orange-100" @click="showFile = true">
+                                <Icon icon="ic:round-picture-as-pdf" width="50" class="mx-auto" />
+                                <h3>{{ material.nome }}</h3>
                             </button>
-                            <!-- <VuePdfApp style="" :pdf="`/${material.file}`"></VuePdfApp> -->
-                        </div>
-                    </li>
-                </ul>
+                            <div class="h-full bg-black absolute top-0 left-0 right-0 text-white z-10 p-5" v-if="showFile">
+                                <button class="text-white flex items-center font-bold mx-auto pb-3" @click="showFile = false">
+                                    <Icon icon="ic:round-close" width="25" /> FECHAR
+                                </button>
+                                <VuePdfApp style="" :pdf="`/${material.file}`"></VuePdfApp>
+                            </div>
+                        </li>
+                    </ul>
+                </ClientOnly>
             </div>
         </div>
         <ModulesAsideModules />
@@ -37,7 +39,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useModulesStore } from '@/stores/ModulesStore'
-// import VuePdfApp from "vue3-pdf-app"
+import VuePdfApp from "vue3-pdf-app"
 import "vue3-pdf-app/dist/icons/main.css"
 import { Icon } from "@iconify/vue"
 
