@@ -23,7 +23,7 @@
                             <button class="text-white flex items-center font-bold mx-auto pb-3" @click="showFile = false">
                                 <Icon icon="ic:round-close" width="25" /> FECHAR
                             </button>
-                            <VuePdfApp style="" :pdf="`/${material.file}`"></VuePdfApp>
+                            <!-- <VuePdfApp style="" :pdf="`/${material.file}`"></VuePdfApp> -->
                         </div>
                     </li>
                 </ul>
@@ -37,7 +37,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useModulesStore } from '@/stores/ModulesStore'
-import VuePdfApp from "vue3-pdf-app"
+// import VuePdfApp from "vue3-pdf-app"
 import "vue3-pdf-app/dist/icons/main.css"
 import { Icon } from "@iconify/vue"
 
