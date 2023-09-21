@@ -13,12 +13,12 @@
                     </NuxtLink>
                 </template>
                 <template v-else>
-                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" :aria-controls="`'dropdown-'${i}`" :data-collapse-toggle="`'dropdown-'${i}`" @click="openSubMenu(`'dropdown-'${i}`)">
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" :aria-controls="`dropdown-${i}`" :data-collapse-toggle="`dropdown-${i}`" @click="openSubMenu(`dropdown-${i}`)">
                         <Icon :icon="item.icon" width="25" />
                         <span :class="['flex-1 ml-3 text-left whitespace-nowrap', {'md:hidden': !menuOpen, 'block': menuOpen}]">{{ item.name }}</span>
                         <Icon icon="ic:outline-keyboard-arrow-down" width="25" v-if="menuOpen" />
                     </button>
-                    <ul :id="`'dropdown-'${i}`" class="hidden py-2 space-y-2">
+                    <ul :id="`dropdown-${i}`" class="hidden py-2 space-y-2 subMenu">
                         <li v-for="subItem in item.subMenu" :key="subItem">
                             <NuxtLink :to="subItem.route" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">{{ subItem.name }}</NuxtLink>
                         </li>
@@ -75,16 +75,42 @@ const itemsMenu = [
         icon: 'ic:round-notifications',
         route: '/avisos',
         subMenu: null
-    }
+    },
+    {
+        name: 'Configurações',
+        icon: 'ic:round-settings',
+        route: '/configuracoes',
+        subMenu: [
+            {
+                name: 'Geral',
+                route: '/geral'
+            },
+            {
+                name: 'Usuários',
+                route: '/usuarios'
+            },
+            {
+                name: 'Permissões',
+                route: '/permissoes'
+            },
+        ]
+    },
 ]
 
 function toggleMenu() {
     AppStore.toggleMenu()
+    document.querySelectorAll('.subMenu').forEach(el => {
+        el.classList.add('hidden')
+    })
 }
 
 function openSubMenu(dataset) {
     document.getElementById(dataset).classList.toggle('hidden')
+    if(!menuOpen.value) {
+        AppStore.toggleMenu()
+    }
 }
+
 </script>
 
 <style scoped>
