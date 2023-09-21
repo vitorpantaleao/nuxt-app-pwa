@@ -16,7 +16,8 @@
                     <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" :aria-controls="`dropdown-${i}`" :data-collapse-toggle="`dropdown-${i}`" @click="openSubMenu(`dropdown-${i}`)">
                         <Icon :icon="item.icon" width="25" />
                         <span :class="['flex-1 ml-3 text-left whitespace-nowrap', {'md:hidden': !menuOpen, 'block': menuOpen}]">{{ item.name }}</span>
-                        <Icon icon="ic:outline-keyboard-arrow-down" width="25" v-if="menuOpen" />
+                        <Icon icon="ic:outline-keyboard-arrow-down" width="25" v-show="menuOpen" class="icon-subMenu" />
+                        <Icon icon="ic:outline-keyboard-arrow-up" width="25" v-show="menuOpen" class="icon-subMenu hidden" />
                     </button>
                     <ul :id="`dropdown-${i}`" class="hidden py-2 space-y-2 subMenu">
                         <li v-for="subItem in item.subMenu" :key="subItem">
@@ -106,6 +107,10 @@ function toggleMenu() {
 
 function openSubMenu(dataset) {
     document.getElementById(dataset).classList.toggle('hidden')
+    document.querySelector(`[data-collapse-toggle="${dataset}"]`).querySelectorAll('.icon-subMenu').forEach(el => {
+        el.classList.toggle('hidden')
+    })
+
     if(!menuOpen.value) {
         AppStore.toggleMenu()
     }
