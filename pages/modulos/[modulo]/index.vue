@@ -8,7 +8,7 @@
             <ul class="mt-2 grid grid-cols-2 md:grid-cols-4 gap-6">
                 <li v-for="aula in modulo.aulas" :key="aula.id">
                     <NuxtLink :to="`/modulos/${modulo.id}/aula/${aula.id}`">
-                        <NuxtImg :src="aula.thumbnail" loading="lazy" class="" />
+                        <NuxtImg :src="aula.thumbnail" loading="lazy" class="rounded" />
                         <p>{{ aula.nome }}</p>
                     </NuxtLink>
                 </li>

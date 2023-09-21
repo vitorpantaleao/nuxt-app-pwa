@@ -20,7 +20,7 @@
                         <AccordionContent class="accordion-content bg-slate-900 border-b-[0.5px] border-slate-700">
                             <NuxtLink :to="`/modulos/${modulo.id}/aula/${aula.id}`" :class="['flex items-center px-5 py-2 hover:bg-slate-700 cursor-pointer', {'bg-slate-700': aulaId == aula.id && moduloId == modulo.id}]">
                                 <AvatarRoot class="inline-flex h-[45px] w-[65px] select-none items-center justify-center overflow-hidden align-middle">
-                                    <AvatarImage class="h-full w-full object-cover" :src="aula.thumbnail" :alt="aula.nome" />
+                                    <AvatarImage class="h-full w-full object-cover rounded" :src="aula.thumbnail" :alt="aula.nome" />
                                     <AvatarFallback class="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium" :delay-ms="600"> {{ aula.nome }} </AvatarFallback>
                                 </AvatarRoot>
                                 <div class="ml-3">
