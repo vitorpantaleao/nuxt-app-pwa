@@ -39,6 +39,7 @@ export default defineNuxtConfig({
   imports: { dirs: ["stores"] },
   ssr: true,
   image: {
+    provider: 'static',
     // dir: 'assets/img',
   },
   tailwindcss: {
