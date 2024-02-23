@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   nitro: {
     // preset: 'vercel-edge',
-    preset: 'node',
+    // preset: 'node',
   },
   app: {
     head: {
