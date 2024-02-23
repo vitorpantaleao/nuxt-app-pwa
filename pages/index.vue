@@ -12,7 +12,7 @@
       <div class="mb-10">
         <picture>
           <source srcset="https://placehold.co/768x250/77c4ff/fff/?text=Mobile" media="(max-width: 768px)" />
-          <NuxtImg src="https://placehold.co/1024x200/77c4ff/fff?text=Desktop" class="w-screen" loading="lazy" />
+          <NuxtImg src="https://placehold.co/1024x200/000000/fff?text=Middle" class="w-screen" loading="lazy" />
         </picture>
       </div>
     </div>
